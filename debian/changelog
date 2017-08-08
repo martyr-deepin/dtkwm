@@ -1,0 +1,5 @@
+dtkwm (0.1.0-1) unstable; urgency=low
+
+  * Initial release. Merge from deepin-tool-kit.
+
+ -- TagBuilder <tagbuilder@deepin.com>  Wed, 26 Jul 2017 17:10:12 +0800
