@@ -8,9 +8,9 @@ Build-Depends: debhelper (>= 9), qt5-default, pkg-config,
  libmtdev-dev, libegl1-mesa-dev, libxtst-dev
 Standards-Version: 3.9.6
 
-Package: libdtkwm
+Package: libdtkwm2
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libdtkwm
+Depends: ${shlibs:Depends}, ${misc:Depends}
 Multi-Arch: same
 Description: Deepin graphical user interface library
  DtkWm is used to handle double screen for deepin desktop development.
@@ -18,8 +18,8 @@ Description: Deepin graphical user interface library
 
 Package: libdtkwm-dev
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, libdtkwm( =${binary:Version}),
- libqt5x11extras5-dev, libdtkcore-dev, libdtkwm-dev
+Depends: ${shlibs:Depends}, ${misc:Depends}, libdtkwm2( =${binary:Version}),
+ libqt5x11extras5-dev, libdtkcore-dev
 Description: Deepin graphical user interface library
  DtkWm is used to handle double screen for deepin desktop development.
  This package contains the shared libraries.
