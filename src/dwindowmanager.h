@@ -69,6 +69,8 @@ public:
     void setWindowBlur(int wid, QVector<uint32_t> &data);
     void translateCoords(xcb_window_t window, int32_t& x, int32_t& y);
     WindowRect adjustRectInScreenArea(WindowRect rect);
+    int getWindowPid(xcb_window_t window);
+    QPixmap getWindowIcon(xcb_window_t win, int iconSize);
 
     xcb_window_t rootWindow;
 

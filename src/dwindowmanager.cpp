@@ -24,11 +24,15 @@
 
 #include <QObject>
 #include <QDebug>
+#include <QPixmap>
+#include <QIcon>
 #include <QRect>
 #include <QtX11Extras/QX11Info>
 
 #include <DObjectPrivate>
 
+#include <X11/Xatom.h>
+#include <X11/Xlib.h>
 #include <xcb/xcb.h>
 #include <xcb/xcb_aux.h>
 
@@ -402,6 +406,53 @@ void DWindowManager::setWindowBlur(int wid, QVector<uint32_t> &data)
         data.size(),
         data.constData());
     xcb_flush(d->conn);
+}
+
+int DWindowManager::getWindowPid(xcb_window_t window)
+{
+    xcb_get_property_reply_t *reply = getProperty(window, "_NET_WM_PID", XCB_ATOM_CARDINAL);
+    int pid = 0;
+
+    if (reply) {
+        pid = *((int *) xcb_get_property_value(reply));
+
+        free(reply);
+    }
+
+    return pid;
+}
+
+QPixmap DWindowManager::getWindowIcon(xcb_window_t win, int iconSize)
+{
+    QIcon defaultExecutableIcon = QIcon::fromTheme("application-x-executable");
+    QPixmap defaultPixmap = defaultExecutableIcon.pixmap(iconSize, iconSize);
+    
+    if (win > 0) {
+        int format;
+        ulong type, nitems, extra;
+        ulong* data = 0;
+
+        XGetWindowProperty(QX11Info::display(), win, getAtom("_NET_WM_ICON"),
+                           0, LONG_MAX, False, AnyPropertyType,
+                           &type, &format, &nitems, &extra,
+                           (uchar**)&data);
+        if (!data) {
+            return defaultPixmap;
+        }
+
+        QImage img (data[0], data[1], QImage::Format_ARGB32);
+        for (int i=0; i<img.byteCount()/4; ++i) {
+            ((uint*)img.bits())[i] = data[i+2];
+        }
+        
+        // Need add options Qt::KeepAspectRatio and Qt::SmoothTransformation to keep window icon scaled smoothly.
+        QPixmap pixmap = QPixmap::fromImage(img).scaled(iconSize, iconSize, Qt::KeepAspectRatio, Qt::SmoothTransformation);
+        XFree(data);
+        
+        return pixmap;
+    }
+
+    return defaultPixmap;
 }
 
 DWM_END_NAMESPACE
