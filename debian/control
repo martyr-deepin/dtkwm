@@ -4,7 +4,8 @@ Priority: optional
 Maintainer: Deepin Sysdev <sysdev@deepin.com>
 Build-Depends: debhelper (>= 9), qt5-default, pkg-config,
  libqt5x11extras5-dev, libxext-dev, qtbase5-private-dev,
- x11proto-xext-dev, libxcb-util0-dev, libdtkcore-dev
+ x11proto-xext-dev, libxcb-util0-dev, libdtkcore-dev,
+ libmtdev-dev, libegl1-mesa-dev, libxtst-dev
 Standards-Version: 3.9.6
 
 Package: libdtkwm
