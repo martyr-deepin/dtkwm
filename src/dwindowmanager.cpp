@@ -357,20 +357,20 @@ WindowRect DWindowManager::getWindowRect(xcb_window_t window)
 
 WindowRect DWindowManager::adjustRectInScreenArea(WindowRect rect)
 {
-    WindowRect newRect;
-    newRect.x = rect.x >= 0 ? rect.x : 0;
-    newRect.y = rect.y >= 0 ? rect.y : 0;
-    newRect.width = rect.x >= 0 ? rect.width : rect.width + rect.x;
-    newRect.height = rect.y >= 0 ? rect.height : rect.height + rect.y;
-
     WindowRect rootWindowRect = getRootWindowRect();
+    
+    WindowRect newRect;
+    newRect.x = rect.x >= rootWindowRect.x ? rect.x : rootWindowRect.x;
+    newRect.y = rect.y >= rootWindowRect.y ? rect.y : rootWindowRect.y;
+    newRect.width = rect.x >= rootWindowRect.x ? rect.width : rect.width + (rect.x - rootWindowRect.x);
+    newRect.height = rect.y >= rootWindowRect.y ? rect.height : rect.height + (rect.y - rootWindowRect.y);
 
-    if (newRect.x + newRect.width > rootWindowRect.width) {
-        newRect.width = rootWindowRect.width - newRect.x;
+    if (newRect.x + newRect.width > rootWindowRect.x + rootWindowRect.width) {
+        newRect.width = rootWindowRect.x + rootWindowRect.width - newRect.x;
     }
 
-    if (newRect.y + newRect.height > rootWindowRect.height) {
-        newRect.height = rootWindowRect.height - newRect.y;
+    if (newRect.y + newRect.height > rootWindowRect.y + rootWindowRect.height) {
+        newRect.height = rootWindowRect.y + rootWindowRect.height - newRect.y;
     }
 
     return newRect;
