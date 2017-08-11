@@ -305,17 +305,7 @@ void DWindowManager::setRootWindowRect(QRect rect) {
 
 WindowRect DWindowManager::getRootWindowRect() {
     D_DC(DWindowManager);
-//    WindowRect rect;
-//    xcb_get_geometry_reply_t *geometry = xcb_get_geometry_reply(conn, xcb_get_geometry(conn, rootWindow), 0);
-
-//    rect.x = 0;
-//    rect.y = 0;
-//    rect.width = geometry->width;
-//    rect.height = geometry->height;
-
-//    free(geometry);
-
-//    return rect;
+    
     return d->rootWindowRect;
 }
 
