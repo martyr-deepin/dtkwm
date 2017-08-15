@@ -15,7 +15,7 @@ DEFINES += LIBDTKWM_LIBRARY
 #linux* {
     CONFIG += link_pkgconfig
     PKGCONFIG += xcb xcb-util dtkcore
-    LIBS += -lX11 -lXext -lXtst
+    LIBS += -lX11 -lXext
 #}
 
 SOURCES += \
