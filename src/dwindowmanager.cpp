@@ -18,6 +18,7 @@
 #include <QPixmap>
 #include <QIcon>
 #include <QRect>
+#include <QApplication>
 #include <QtX11Extras/QX11Info>
 
 #include <DObjectPrivate>
@@ -338,6 +339,14 @@ WindowRect DWindowManager::getWindowRect(xcb_window_t window)
         rect.y += extents[2];
         rect.width -= extents[0] + extents[1];
         rect.height -= extents[2] + extents[3];
+    }
+
+    const qreal ratio = qApp->devicePixelRatio();
+    if (ratio != 1.0) {
+        rect.x /= ratio;
+        rect.y /= ratio;
+        rect.width /= ratio;
+        rect.height /= ratio;
     }
 
     free(geometry);
