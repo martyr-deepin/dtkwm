@@ -445,4 +445,11 @@ QPixmap DWindowManager::getWindowIcon(xcb_window_t win, int iconSize)
     return defaultPixmap;
 }
 
+void DWindowManager::killWindow(xcb_window_t window)
+{
+    XKillClient(QX11Info::display(), window);
+    XSync(QX11Info::display(), 0);
+}
+
+
 DWM_END_NAMESPACE

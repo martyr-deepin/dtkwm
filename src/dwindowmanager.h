@@ -69,6 +69,7 @@ public:
     WindowRect adjustRectInScreenArea(WindowRect rect);
     int getWindowPid(xcb_window_t window);
     QPixmap getWindowIcon(xcb_window_t win, int iconSize);
+    void killWindow(xcb_window_t window);
 
     xcb_window_t rootWindow;
 
