@@ -184,6 +184,22 @@ QString DWindowManager::getWindowClass(xcb_window_t window)
     }
 }
 
+QString DWindowManager::getWindowFlatpakAppid(xcb_window_t window)
+{
+    xcb_get_property_reply_t *reply = getProperty(window, "FLATPAK_APPID", getAtom("STRING"));
+
+    if(reply) {
+        QList<QByteArray> rawClasses = QByteArray(static_cast<char*>(xcb_get_property_value(reply)),
+                                                  xcb_get_property_value_length(reply)).split('\0');
+
+        free(reply);
+
+        return QString::fromLatin1(rawClasses[0]);
+    } else {
+        return QString();
+    }
+}
+
 QString DWindowManager::getWindowName(xcb_window_t window)
 {
     if (window == rootWindow) {

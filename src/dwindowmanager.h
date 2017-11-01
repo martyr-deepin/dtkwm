@@ -55,6 +55,7 @@ public:
     QString getAtomName(xcb_atom_t atom);
     QString getWindowName(xcb_window_t window);
     QString getWindowClass(xcb_window_t window);
+    QString getWindowFlatpakAppid(xcb_window_t window);
     QStringList getWindowTypes(xcb_window_t window);
     QStringList getWindowStates(xcb_window_t window);
     WindowRect getRootWindowRect();
