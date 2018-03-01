@@ -1,3 +1,13 @@
+<a name="2.0.7"></a>
+## 2.0.7 (2018-03-01)
+
+
+#### Features
+
+*   set version form changelog ([d710cbe0](https://github.com/linuxdeepin/dtkwm/commit/d710cbe08be4f37b0ac4af44fd4d6150e6c04af2))
+
+
+
 <a name="2.0.6"></a>
 ## 2.0.6 (2018-01-15)
 
