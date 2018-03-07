@@ -1,1 +1,3 @@
 *.pro.user*
+cmake/DtkWm/DtkWmConfig.cmake
+src/qt_lib_dtk*.pri

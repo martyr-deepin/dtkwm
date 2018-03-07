@@ -1,6 +1,4 @@
-include($$PWD/lib.pri)
-
-QT       += core gui  x11extras dbus
+QT       += core gui  x11extras dbus dtkcore
 greaterThan(QT_MAJOR_VERSION, 4) {
   QT += widgets core gui
   # Qt >= 5.8
@@ -11,6 +9,10 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 TEMPLATE = lib
 TARGET = dtkwm
 DEFINES += LIBDTKWM_LIBRARY
+
+load(dtk_build)
+load(dtk_module)
+load(dtk_cmake)
 
 #linux* {
     CONFIG += link_pkgconfig
@@ -32,14 +34,5 @@ INCLUDEPATH += $$PWD
 # ----------------------------------------------
 #install config
 includes.files += $$PWD/*.h
-includes.path = $${DTK_INCLUDEPATH}/DWm
 
-QMAKE_PKGCONFIG_LIBDIR = $$target.path
-QMAKE_PKGCONFIG_VERSION = $$VERSION
-QMAKE_PKGCONFIG_DESTDIR = pkgconfig
-
-QMAKE_PKGCONFIG_NAME = DTK_WM
-QMAKE_PKGCONFIG_DESCRIPTION = Deepin Tool Kit WM Header Files
-QMAKE_PKGCONFIG_INCDIR = $$includes.path
-
-
+INSTALLS += includes target

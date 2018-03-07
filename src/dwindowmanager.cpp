@@ -263,7 +263,7 @@ QList<xcb_window_t> DWindowManager::getWindows()
         for (int i = 0; i < windowListLength; i++) {
             xcb_window_t window = windowList[i];
 
-            foreach(QString type, getWindowTypes(window)) {
+            Q_FOREACH(QString type, getWindowTypes(window)) {
                 if (type == "_NET_WM_WINDOW_TYPE_NORMAL" ||
                     type == "_NET_WM_WINDOW_TYPE_DIALOG"
                     ) {
