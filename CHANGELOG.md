@@ -1,3 +1,13 @@
+<a name="2.0.8"></a>
+## 2.0.8 (2018-05-02)
+
+
+#### Features
+
+*   add sysbols check ([243ffca6](https://github.com/linuxdeepin/dtkwm/commit/243ffca6b20387bfdcb6501fdb7273542e80c608))
+
+
+
 <a name="2.0.7"></a>
 ## 2.0.7 (2018-03-01)
 
