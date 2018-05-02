@@ -53,8 +53,6 @@ libdtkwm.so.2 libdtkwm2 #MINVER#
  _ZN5QListI5QRectE6appendERKS0_@Base 2.0.7
  _ZN5QListI7QStringE18detach_helper_growEii@Base 2.0.7
  _ZN5QListI7QStringE6appendERKS0_@Base 2.0.7
- _ZN5QListI7QStringEC1ERKS1_@Base 2.0.7
- _ZN5QListI7QStringEC2ERKS1_@Base 2.0.7
  _ZN5QListI7QStringED1Ev@Base 2.0.7
  _ZN5QListI7QStringED2Ev@Base 2.0.7
  _ZN5QListIP7QScreenE13detach_helperEi@Base 2.0.7
