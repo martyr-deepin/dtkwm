@@ -1,3 +1,14 @@
+<a name="2.0.8.1"></a>
+## 2.0.8.1 (2018-05-14)
+
+
+#### Bug Fixes
+
+*   update symbols ([b0bb90a9](https://github.com/linuxdeepin/dtkwm/commit/b0bb90a90beae4bb25a2e7d4da3a134a349013ba))
+*   remove some symbals ([3fba04b9](https://github.com/linuxdeepin/dtkwm/commit/3fba04b9c68d68a4b4e1d3b5eab063811c868a03))
+
+
+
 <a name="2.0.8"></a>
 ## 2.0.8 (2018-05-02)
 
