@@ -1,3 +1,4 @@
+# SymbolsHelper-Confirmed: 2.0.7 amd64
 libdtkwm.so.2 libdtkwm2 #MINVER#
  _ZN10QByteArrayD1Ev@Base 2.0.7
  _ZN10QByteArrayD2Ev@Base 2.0.7
@@ -46,27 +47,29 @@ libdtkwm.so.2 libdtkwm2 #MINVER#
  _ZN3Dtk2Wm25DScreenWindowsUtilPrivateD0Ev@Base 2.0.7
  _ZN3Dtk2Wm25DScreenWindowsUtilPrivateD1Ev@Base 2.0.7
  _ZN3Dtk2Wm25DScreenWindowsUtilPrivateD2Ev@Base 2.0.7
- _ZN5QListI10QByteArrayE13detach_helperEi@Base 2.0.7
- _ZN5QListI10QByteArrayED1Ev@Base 2.0.7
- _ZN5QListI10QByteArrayED2Ev@Base 2.0.7
- _ZN5QListI5QRectE18detach_helper_growEii@Base 2.0.7
- _ZN5QListI5QRectE6appendERKS0_@Base 2.0.7
- _ZN5QListI7QStringE18detach_helper_growEii@Base 2.0.7
- _ZN5QListI7QStringE6appendERKS0_@Base 2.0.7
- _ZN5QListI7QStringED1Ev@Base 2.0.7
- _ZN5QListI7QStringED2Ev@Base 2.0.7
- _ZN5QListIP7QScreenE13detach_helperEi@Base 2.0.7
- _ZN5QListIP7QScreenED1Ev@Base 2.0.7
- _ZN5QListIP7QScreenED2Ev@Base 2.0.7
- _ZN5QListIiE18detach_helper_growEii@Base 2.0.7
- _ZN5QListIiE6appendERKi@Base 2.0.7
- _ZN5QListIiED1Ev@Base 2.0.7
- _ZN5QListIiED2Ev@Base 2.0.7
- _ZN5QListIjE13detach_helperEi@Base 2.0.7
- _ZN5QListIjE18detach_helper_growEii@Base 2.0.7
- _ZN5QListIjE6appendERKj@Base 2.0.7
- _ZN5QListIjED1Ev@Base 2.0.7
- _ZN5QListIjED2Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListI10QByteArrayE13detach_helperEi@Base 2.0.7
+ (optional=templinst)_ZN5QListI10QByteArrayED1Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListI10QByteArrayED2Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListI5QRectE18detach_helper_growEii@Base 2.0.7
+ (optional=templinst)_ZN5QListI5QRectE6appendERKS0_@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringE18detach_helper_growEii@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringE6appendERKS0_@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringEC1ERKS1_@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringEC2ERKS1_@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringED1Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListI7QStringED2Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIP7QScreenE13detach_helperEi@Base 2.0.7
+ (optional=templinst)_ZN5QListIP7QScreenED1Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIP7QScreenED2Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIiE18detach_helper_growEii@Base 2.0.7
+ (optional=templinst)_ZN5QListIiE6appendERKi@Base 2.0.7
+ (optional=templinst)_ZN5QListIiED1Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIiED2Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIjE13detach_helperEi@Base 2.0.7
+ (optional=templinst)_ZN5QListIjE18detach_helper_growEii@Base 2.0.7
+ (optional=templinst)_ZN5QListIjE6appendERKj@Base 2.0.7
+ (optional=templinst)_ZN5QListIjED1Ev@Base 2.0.7
+ (optional=templinst)_ZN5QListIjED2Ev@Base 2.0.7
  _ZN7QStringD1Ev@Base 2.0.7
  _ZN7QStringD2Ev@Base 2.0.7
  _ZNK3Dtk2Wm14DWindowManager10metaObjectEv@Base 2.0.7
@@ -90,7 +93,5 @@ libdtkwm.so.2 libdtkwm2 #MINVER#
  _ZTVN3Dtk2Wm18DScreenWindowsUtilE@Base 2.0.7
  _ZTVN3Dtk2Wm21DWindowManagerPrivateE@Base 2.0.7
  _ZTVN3Dtk2Wm25DScreenWindowsUtilPrivateE@Base 2.0.7
- _ZThn16_N3Dtk2Wm14DWindowManagerD0Ev@Base 2.0.7
- _ZThn16_N3Dtk2Wm14DWindowManagerD1Ev@Base 2.0.7
- _ZThn16_N3Dtk2Wm18DScreenWindowsUtilD0Ev@Base 2.0.7
- _ZThn16_N3Dtk2Wm18DScreenWindowsUtilD1Ev@Base 2.0.7
+ (c++)"non-virtual thunk to Dtk::Wm::DScreenWindowsUtil::~DScreenWindowsUtil()@Base" 2.0.7
+ (c++)"non-virtual thunk to Dtk::Wm::DWindowManager::~DWindowManager()@Base" 2.0.7
