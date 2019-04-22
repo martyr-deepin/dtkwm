@@ -29,6 +29,8 @@ public:
     mutable WId rootWindowId;
     mutable QScreen* primaryScreen;
     mutable DWindowManager* xcbWindowManager;
+
+    QRect handleByScaleRatio(QRect &orig_rect) const;
 };
 
 DScreenWindowsUtil::~DScreenWindowsUtil()
@@ -52,21 +54,14 @@ DScreenWindowsUtil::DScreenWindowsUtil(QPoint pos, QObject *parent)
       DObject(*new DScreenWindowsUtilPrivate(this))
 {
     D_DC(DScreenWindowsUtil);
-    d->isPrimaryScreen = true;
+
+    d->isPrimaryScreen         = true;
     QList<QScreen*> screenList = qApp->screens();
-    d->screenNum = qApp->desktop()->screenNumber(pos);
-    d->rootWindowId = qApp->desktop()->screen(d->screenNum)->winId();
-    d->primaryScreen = screenList[d->screenNum];
-
-    if (d->screenNum != 0 && d->screenNum < screenList.length())
-    {
-        d->backgroundRect = screenList[d->screenNum]->geometry();
-    } else {
-        d->backgroundRect = qApp->primaryScreen()->geometry();
-    }
-
-    d->isPrimaryScreen = qApp->primaryScreen()->geometry().contains(pos);
-
+    d->screenNum               = qApp->desktop()->screenNumber(pos);
+    d->rootWindowId            = qApp->desktop()->screen(d->screenNum)->winId();
+    d->primaryScreen           = screenList[d->screenNum];
+    d->backgroundRect = screenList.value(d->screenNum, qApp->primaryScreen())->geometry();
+    d->isPrimaryScreen  = qApp->primaryScreen()->geometry().contains(pos);
     d->xcbWindowManager = new DWindowManager;
     d->xcbWindowManager->setRootWindowRect(d->backgroundRect);
 }
@@ -118,7 +113,7 @@ int DScreenWindowsUtil::getScreenNum() const
 QRect DScreenWindowsUtil::backgroundRect() const
 {
     D_DC(DScreenWindowsUtil);
-    return d->backgroundRect;
+    return d->handleByScaleRatio(d->backgroundRect);
 }
 
 WId DScreenWindowsUtil::rootWindowId() const
@@ -137,6 +132,12 @@ bool DScreenWindowsUtil::isPrimayScreen() const
 {
     D_DC(DScreenWindowsUtil);
     return d->isPrimaryScreen;
+}
+
+QRect DScreenWindowsUtilPrivate::handleByScaleRatio(QRect &orig_rect) const
+{
+    return QRect(orig_rect.topLeft() / qApp->desktop()->screen(screenNum)->devicePixelRatioF(),
+                 orig_rect.size());
 }
 
 DWM_END_NAMESPACE
