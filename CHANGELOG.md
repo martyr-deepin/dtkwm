@@ -1,3 +1,13 @@
+<a name=""></a>
+##  2.0.9 (2019-04-22)
+
+
+#### Bug Fixes
+
+*   Multi-screen window-scale topleft coordinates are incorrect ([3721f67c](https://github.com/linuxdeepin/dtkwm/commit/3721f67c96440e00ec5168c66488d271bb0d82eb))
+
+
+
 <a name="2.0.8.1"></a>
 ## 2.0.8.1 (2018-05-14)
 
