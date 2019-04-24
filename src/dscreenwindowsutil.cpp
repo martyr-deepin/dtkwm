@@ -29,8 +29,6 @@ public:
     mutable WId rootWindowId;
     mutable QScreen* primaryScreen;
     mutable DWindowManager* xcbWindowManager;
-
-    QRect handleByScaleRatio(QRect &orig_rect) const;
 };
 
 DScreenWindowsUtil::~DScreenWindowsUtil()
@@ -113,7 +111,7 @@ int DScreenWindowsUtil::getScreenNum() const
 QRect DScreenWindowsUtil::backgroundRect() const
 {
     D_DC(DScreenWindowsUtil);
-    return d->handleByScaleRatio(d->backgroundRect);
+    return d->backgroundRect;
 }
 
 WId DScreenWindowsUtil::rootWindowId() const
@@ -132,12 +130,6 @@ bool DScreenWindowsUtil::isPrimayScreen() const
 {
     D_DC(DScreenWindowsUtil);
     return d->isPrimaryScreen;
-}
-
-QRect DScreenWindowsUtilPrivate::handleByScaleRatio(QRect &orig_rect) const
-{
-    return QRect(orig_rect.topLeft() / qApp->desktop()->screen(screenNum)->devicePixelRatioF(),
-                 orig_rect.size());
 }
 
 DWM_END_NAMESPACE
