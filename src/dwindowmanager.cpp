@@ -45,16 +45,13 @@ DWindowManager::DWindowManager(QObject *parent)
       DObject(*new DWindowManagerPrivate(this))
 {
     D_DC(DWindowManager);
-    int screenNum;
-    d->conn = xcb_connect(0, &screenNum);
-    xcb_screen_t* screen = xcb_aux_get_screen(d->conn, screenNum);
-    rootWindow = screen->root;
+    d->conn = QX11Info::connection();
+    rootWindow = QX11Info::appRootWindow();
 }
 
 DWindowManager::~DWindowManager()
 {
     D_DC(DWindowManager);
-    xcb_disconnect(d->conn);
     d->conn = NULL;
 }
 
