@@ -8,6 +8,7 @@ greaterThan(QT_MAJOR_VERSION, 4) {
 
 TEMPLATE = lib
 TARGET = dtkwm
+DTK_MODULE_NAME = dtkwm
 DEFINES += LIBDTKWM_LIBRARY
 
 load(dtk_build)
